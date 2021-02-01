@@ -1,4 +1,6 @@
-# docker-laravel
+![Laravel debug queries](img/github_header_docker_laravel.png)
+
+# Docker Laravel
 Gotowe środowisko dockera pod projekty Laravela. Wykorzystuje stos LEMP (Linux, Nginx, MySQL, PHP). 
 
 **Źródło:** https://dev.to/aschmelyun/the-beauty-of-docker-for-local-laravel-development-13c0
