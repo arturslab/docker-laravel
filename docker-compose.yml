@@ -12,7 +12,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src:/var/www/html:delegated
+      - ${APP_PATH}:/var/www/html:delegated
     depends_on:
       - php
       - redis
@@ -46,7 +46,7 @@ services:
       dockerfile: php.dockerfile
     container_name: php
     volumes:
-      - ./src:/var/www/html:delegated
+      - ${APP_PATH}:/var/www/html:delegated
     networks:
       - laravel
 
@@ -65,7 +65,7 @@ services:
       dockerfile: composer.dockerfile
     container_name: composer
     volumes:
-      - ./src:/var/www/html
+      - ${APP_PATH}:/var/www/html
     working_dir: /var/www/html
     depends_on:
       - php
@@ -78,7 +78,7 @@ services:
     image: node:13.7
     container_name: npm
     volumes:
-      - ./src:/var/www/html
+      - ${APP_PATH}:/var/www/html
     working_dir: /var/www/html
     entrypoint: ['npm']
     networks:
@@ -90,7 +90,7 @@ services:
       dockerfile: php.dockerfile
     container_name: artisan
     volumes:
-      - ./src:/var/www/html:delegated
+      - ${APP_PATH}:/var/www/html:delegated
     depends_on:
       - db
     working_dir: /var/www/html
